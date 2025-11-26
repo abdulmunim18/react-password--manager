@@ -10,14 +10,11 @@ const Navbar = () => {
           <span className='text-green-500'>Mang / &gt;</span>
           
           </div>
-        <ul>
-            <li className='flex gap-10 p-2'>
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/contact">Contact</a>
-                <a href="/login">Login</a>
-            </li>
-        </ul>
+       
+        <button className='text-white bg-green-500 rounded-full my-8 flex justify-center items-center p-2 hover:bg-green-600 ring-1 ring-white'> 
+          <img className='invert w-8 p-1 px-2' src="/icons/github.svg" alt="" />
+          <span className='font-bold px-2'>Github</span>
+        </button>
         </div>
 
     </nav>
