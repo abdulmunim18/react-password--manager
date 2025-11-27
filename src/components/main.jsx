@@ -57,9 +57,23 @@ const Main = () => {
   };
 
   const Savepass = () => {
+    if(form.site>3 && form.name.length >3 && form.pass.length >3){
     const newArr = [...passwordarr, {...form, id :uuidv4()}];
     setpasswordarr(newArr);
     localStorage.setItem("passwords", JSON.stringify(newArr));
+    setform({ site: "", name: "", pass: "" }); // form reset
+     toast('Password saved successfully', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    })
+    } else {
+      toast('Please enter details correctly and more than 3 characters')};
   };
   const Deletepass = (id) => {
     let c = confirm("Are you sure you want to delete this password?");
@@ -67,17 +81,23 @@ const Main = () => {
     setpasswordarr(passwordarr.filter((item)=> item.id !==id))
     localStorage.setItem("passwords", JSON.stringify(passwordarr.filter((item)=> item.id !==id)));
     }
-
+    toast('Password Deleted', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   };
   const editpass = (id) => {
     setform(passwordarr.filter(i=> i.id ===id)[0])
     setpasswordarr(passwordarr.filter((item)=> item.id !==id))
   };
   //     const Savepass = () => {
-  //   if (!form.site.trim() || !form.name.trim() || !form.pass.trim()) {
-  //     alert("Please fill all fields before saving!");
-  //     return;
-  //   }
+    
   //     const newArr = [...passwordarr, form];
   //   setpasswordarr(newArr);
   //   localStorage.setItem("passwords", JSON.stringify(newArr));
@@ -103,7 +123,7 @@ const Main = () => {
         theme="light"
       />
       <div className="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-      <div className="my-container">
+      <div className="p-2 md:px-0 md:my-container">
         <h1 className="text-4xl font-bold text-center">
           <span className="text-green-500">&lt;</span>
           Pass
@@ -123,7 +143,7 @@ const Main = () => {
             name="site"
             placeholder="Enter your website URL"
           />
-          <div className="flex w-full gap-5">
+          <div className="flex w-full gap-5 flex-col md:flex-row">
             <input
               value={form.name}
               onChange={handlechange}
