@@ -1,16 +1,30 @@
-# React + Vite
+# 🔐 Password Manager (React + Node.js + MongoDB)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and secure Password Manager built using **React (Vite)** for the frontend and **Node.js + Express + MongoDB** for the backend.  
+This project allows users to **Save**, **View**, and **Delete** passwords directly from a database.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- Add new passwords  
+- Fetch and display all saved passwords  
+- Delete passwords  
+- Fully connected backend (Express) + MongoDB  
+- CORS enabled  
+- Simple, clean UI  
+- Uses Vite for fast React development  
+# 🛠️ Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### **Frontend**
+- React (Vite)
+- Tailwind CSS (optional)
+- JavaScript
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### **Backend**
+- Node.js
+- Express.js
+- MongoDB (Native Driver)
+- dotenv
+- cors
+- body-parser
